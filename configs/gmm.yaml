@@ -1,0 +1,72 @@
+data:
+  path: data/processed/market_features.csv
+  metadata_path: data/processed/market_features_metadata.json
+  date_column: Date
+  split_column: split
+  fold_column: walk_forward_fold
+  price_column: Close
+  return_column: log_return
+  volatility_column: volatility_20
+  volume_column: Volume
+
+features:
+  columns:
+    - log_return_z
+    - simple_return_z
+    - intraday_return_z
+    - intraday_range_z
+    - volume_log_change_z
+    - volatility_5_z
+    - volatility_20_z
+    - return_mean_5_z
+    - volume_zscore_20_z
+    - RSI_z
+    - MACD_z
+    - Sentiment_z
+
+splits:
+  train:
+    - train
+  validation:
+    - validation
+  final_fit:
+    - train
+    - validation
+
+model_grid:
+  n_components:
+    - 2
+    - 3
+    - 4
+    - 5
+  covariance_types:
+    - diag
+    - full
+  seeds:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+
+gmm:
+  n_init: 5
+  max_iter: 300
+  tol: 0.0001
+
+selection:
+  primary_metric: bic
+  minimum_state_share: 0.01
+
+outputs:
+  model_dir: models/gmm
+  tables_dir: reports/tables/gmm
+  figures_dir: reports/figures/gmm
+  best_model_file: best_gmm.pkl
+  training_summary_file: training_summary.json
+  model_selection_file: model_selection.csv
+  state_sequence_file: state_sequence.csv
+  posterior_file: posterior_probabilities.csv
+  empirical_transition_matrix_file: empirical_transition_matrix.csv
+  state_summary_file: state_summary.csv
+  walk_forward_file: walk_forward_results.csv

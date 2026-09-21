@@ -10,7 +10,6 @@ Dự án sử dụng **Mô hình Markov ẩn Gaussian** (*Gaussian Hidden Markov
 | --- | --- |
 | Tên đề tài | Phát hiện và đánh giá các trạng thái ẩn của thị trường tài chính bằng mô hình Markov ẩn Gaussian |
 | Bộ dữ liệu | Stock Market Dataset for Predictive Analysis – Kaggle |
-| Code tham khảo | [hidden-regime/hidden-regime](https://github.com/hidden-regime/hidden-regime), [hmmlearn/hmmlearn](https://github.com/hmmlearn/hmmlearn) |
 | Thuật toán chính | Gaussian Hidden Markov Model (Gaussian HMM) |
 | Baseline so sánh | Gaussian Mixture Model (GMM) |
 

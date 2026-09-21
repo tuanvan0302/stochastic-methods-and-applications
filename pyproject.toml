@@ -1,0 +1,16 @@
+[project]
+name = "t-stochastic-methods-and-applications"
+version = "0.1.0"
+description = "Phat hien trang thai thi truong tai chinh bang Gaussian HMM, doi chieu voi baseline GMM"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "hmmlearn>=0.3.3",
+    "ipykernel>=7.3.0",
+    "matplotlib>=3.11.1",
+    "numpy>=2.4.6",
+    "pandas>=3.0.5",
+    "pyyaml>=6.0.3",
+    "scikit-learn>=1.9.0",
+    "seaborn>=0.13.2",
+]
